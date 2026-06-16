@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasan Ali — Structural Engineer</title>
+<meta name="description" content="Structural Engineer specializing in analysis, design, and US permit-ready drawings for residential and commercial projects across the United States.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f8f9fc;
+  --bg-warm:#f0f2f8;
+  --bg-card:#ffffff;
+  --text:#1a1a2e;
+  --text-light:#555770;
+  --text-muted:#8b8da6;
+  --accent:#6c5ce7;
+  --accent-light:#8577ed;
+  --accent-soft:rgba(108,92,231,0.08);
+  --accent-warm:#7c6cf0;
+  --teal:#4a6cf7;
+  --teal-soft:rgba(74,108,247,0.08);
+  --border:#e2e4f0;
+  --border-light:#eceef6;
+  --shadow-sm:0 1px 3px rgba(108,92,231,0.04),0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 16px rgba(108,92,231,0.08),0 2px 6px rgba(0,0,0,0.03);
+  --shadow-lg:0 12px 40px rgba(108,92,231,0.1),0 4px 12px rgba(0,0,0,0.04);
+  --serif:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --transition:0.35s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
+
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-warm),var(--teal));z-index:1100;transition:width 0.1s linear;width:0%}
+
+/* Navigation */
+.nav{position:fixed;top:2px;left:0;right:0;z-index:1000;padding:1rem 2rem;transition:var(--transition);display:flex;align-items:center;justify-content:space-between}
+.nav.scrolled{background:rgba(248,249,252,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 12px rgba(108,92,231,0.06)}
+.nav-logo{font-family:var(--serif);font-size:1.35rem;color:var(--text);text-decoration:none;letter-spacing:-0.5px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2.25rem;list-style:none}
+.nav-links a{color:var(--text-light);text-decoration:none;font-size:0.85rem;font-weight:500;transition:var(--transition);position:relative;letter-spacing:0.3px}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--accent);transition:var(--transition);border-radius:1px}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--text);transition:var(--transition)}
+.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden;background:var(--bg)}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(108,92,231,0.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-10%;left:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(74,108,247,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:
+  linear-gradient(var(--border-light) 1px,transparent 1px),
+  linear-gradient(90deg,var(--border-light) 1px,transparent 1px);
+background-size:80px 80px;opacity:0.5;pointer-events:none;animation:gridPan 30s linear infinite}
+@keyframes gridPan{from{transform:translate(0,0)}to{transform:translate(80px,80px)}}
+.hero-content{position:relative;max-width:750px}
+.hero-content>*{opacity:0;transform:translateY(20px);animation:heroFadeIn 0.8s ease forwards}
+.hero-content>*:nth-child(1){animation-delay:0.1s}
+.hero-content>*:nth-child(2){animation-delay:0.3s}
+.hero-content>*:nth-child(3){animation-delay:0.5s}
+.hero-content>*:nth-child(4){animation-delay:0.7s}
+.hero-content>*:nth-child(5){animation-delay:0.9s}
+@keyframes heroFadeIn{to{opacity:1;transform:translateY(0)}}
+.hero-label{display:inline-block;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--accent);margin-bottom:1.75rem;padding:0.4rem 1.2rem;border:1px solid var(--accent);border-radius:2px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,7vw,5rem);font-weight:700;line-height:1.08;margin-bottom:1.25rem;letter-spacing:-1.5px;color:var(--text)}
+.hero h1 span{color:var(--accent)}
+.hero-title{font-size:clamp(0.9rem,1.8vw,1.05rem);color:var(--text-light);font-weight:400;margin-bottom:1rem;letter-spacing:1.5px;text-transform:uppercase}
+.hero-tagline{font-size:1rem;color:var(--text-muted);max-width:500px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:3px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:var(--transition);cursor:pointer;border:none;font-family:var(--sans);letter-spacing:0.3px}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 12px rgba(108,92,231,0.25)}
+.btn-primary:hover{background:var(--accent-light);box-shadow:0 4px 20px rgba(108,92,231,0.35);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* Sections */
+section{padding:6rem 2rem}
+.container{max-width:1080px;margin:0 auto}
+.section-header{margin-bottom:3rem}
+.section-label{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--accent);margin-bottom:0.75rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.5px;color:var(--text)}
+.section-subtitle{font-size:0.92rem;color:var(--text-muted);max-width:460px;font-weight:300}
+.section-line{width:40px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-warm));margin-top:1.25rem;border-radius:1px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.about-text p{color:var(--text-light);margin-bottom:1.25rem;font-size:0.92rem;font-weight:300;line-height:1.85}
+.about-text p strong{color:var(--text);font-weight:600}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:8px;padding:1.5rem;text-align:center;transition:var(--transition);box-shadow:var(--shadow-sm)}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--border)}
+.stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--accent);display:block;font-variant-numeric:tabular-nums}
+.stat-label{font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem;letter-spacing:0.3px}
+.tools-list{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.75rem}
+.tool-tag{font-size:0.75rem;padding:0.4rem 0.85rem;background:var(--accent-soft);border:none;border-radius:3px;color:var(--accent);transition:var(--transition);font-weight:500}
+.tool-tag:hover{background:var(--accent);color:#fff}
+
+/* Services */
+#services{background:var(--bg-warm)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem}
+.service-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:10px;padding:2rem 1.5rem;transition:var(--transition);position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));transform:scaleX(0);transition:var(--transition);transform-origin:left}
+.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:48px;height:48px;background:var(--accent-soft);border:none;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.2rem;color:var(--accent);transition:var(--transition)}
+.service-card:hover .service-icon{background:var(--accent);color:#fff}
+.service-card h3{font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:0.75rem;color:var(--text)}
+.service-card p{font-size:0.85rem;color:var(--text-muted);line-height:1.7;font-weight:300}
+
+/* Projects */
+#projects{background:var(--bg)}
+.projects-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.project-count{font-size:0.82rem;color:var(--text-muted);font-weight:400}
+.project-count strong{color:var(--accent);font-weight:600}
+.filter-bar{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+.filter-btn{padding:0.45rem 1rem;border:1px solid var(--border);border-radius:20px;background:transparent;color:var(--text-muted);font-size:0.8rem;font-weight:500;cursor:pointer;transition:var(--transition);font-family:var(--sans)}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}
+.project-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:10px;overflow:hidden;transition:all 0.4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow-sm)}
+.project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.project-card.hidden{display:none}
+.project-card.fade-out{opacity:0;transform:scale(0.95)}
+.project-accent{height:3px;background:linear-gradient(90deg,var(--accent),var(--teal))}
+.project-accent.commercial{background:linear-gradient(90deg,var(--accent-warm),#e06340)}
+.project-body{padding:1.5rem}
+.project-body h3{font-family:var(--serif);font-size:0.98rem;font-weight:700;margin-bottom:0.5rem;color:var(--text)}
+.project-meta{display:flex;gap:0.75rem;margin-bottom:0.6rem;flex-wrap:wrap}
+.project-meta span{font-size:0.78rem;color:var(--text-muted);display:flex;align-items:center;gap:0.3rem}
+.project-meta svg{width:13px;height:13px;flex-shrink:0;stroke:var(--text-muted)}
+.project-scope{font-size:0.83rem;color:var(--text-light);line-height:1.65;font-weight:300}
+.project-tags{display:flex;gap:0.4rem;margin-top:0.85rem;flex-wrap:wrap}
+.project-tag{font-size:0.68rem;padding:0.2rem 0.55rem;background:var(--teal-soft);border:none;border-radius:2px;color:var(--teal);font-weight:500;transition:var(--transition)}
+.project-card:hover .project-tag{background:var(--accent-soft);color:var(--accent)}
+.load-more-wrap{text-align:center;margin-top:2.5rem}
+.load-more-btn{padding:0.75rem 2.5rem;border:1.5px solid var(--border);border-radius:4px;background:transparent;color:var(--text-light);font-size:0.88rem;font-weight:500;cursor:pointer;transition:var(--transition);font-family:var(--sans)}
+.load-more-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.load-more-btn.hidden{display:none}
+
+/* Testimonials */
+#testimonials{background:var(--bg-warm)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.testimonial-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:10px;padding:2rem;transition:var(--transition);position:relative;box-shadow:var(--shadow-sm)}
+.testimonial-card::before{content:'\201C';position:absolute;top:8px;right:20px;font-family:var(--serif);font-size:5rem;color:var(--border-light);line-height:1}
+.testimonial-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.testimonial-stars{color:var(--accent-warm);font-size:0.9rem;letter-spacing:2px;margin-bottom:1rem}
+.testimonial-text{font-size:0.92rem;color:var(--text-light);line-height:1.75;margin-bottom:1.25rem;font-style:italic;position:relative;z-index:1;font-weight:300}
+.testimonial-author{display:flex;align-items:center;gap:0.75rem;padding-top:1.25rem;border-top:1px solid var(--border-light)}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;color:var(--accent);flex-shrink:0}
+.testimonial-name{font-size:0.88rem;font-weight:600;color:var(--text)}
+.testimonial-meta{font-size:0.78rem;color:var(--text-muted)}
+.testimonial-badge{display:inline-block;font-size:0.62rem;padding:0.15rem 0.5rem;background:var(--accent-warm);color:#fff;border-radius:10px;font-weight:700;margin-left:0.5rem;vertical-align:middle;text-transform:uppercase;letter-spacing:0.5px}
+
+/* Work Samples */
+#samples{background:var(--bg)}
+.samples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.sample-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:10px;padding:1.75rem;transition:var(--transition);text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}
+.sample-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));transform:scaleX(0);transition:var(--transition);transform-origin:left}
+.sample-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+.sample-card:hover::before{transform:scaleX(1)}
+.sample-icon{width:52px;height:52px;background:var(--accent-soft);border:none;border-radius:10px;display:flex;align-items:center;justify-content:center;transition:var(--transition);flex-shrink:0}
+.sample-card:hover .sample-icon{background:var(--accent);transform:scale(1.05)}
+.sample-icon svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.5;transition:var(--transition)}
+.sample-card:hover .sample-icon svg{stroke:#fff}
+.sample-info h3{font-family:var(--serif);font-size:0.95rem;font-weight:700;margin-bottom:0.35rem}
+.sample-info p{font-size:0.82rem;color:var(--text-muted);line-height:1.6;font-weight:300}
+.sample-meta{display:flex;justify-content:space-between;align-items:center;padding-top:0.85rem;border-top:1px solid var(--border-light);margin-top:auto}
+.sample-type{font-size:0.7rem;padding:0.25rem 0.65rem;background:var(--teal-soft);border:none;border-radius:2px;color:var(--teal);text-transform:uppercase;letter-spacing:0.5px;font-weight:600}
+.sample-size{font-size:0.75rem;color:var(--text-muted)}
+.sample-dl{font-size:0.78rem;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:0.3rem}
+.sample-dl svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2}
+
+/* Contact */
+#contact{background:var(--bg-warm)}
+.contact-content{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.contact-info p{color:var(--text-light);margin-bottom:2rem;font-size:0.92rem;font-weight:300;line-height:1.85}
+.contact-link{display:flex;align-items:center;gap:0.85rem;padding:1rem 1.25rem;background:var(--bg-card);border:1px solid var(--border-light);border-radius:8px;text-decoration:none;color:var(--text);transition:var(--transition);margin-bottom:0.75rem;box-shadow:var(--shadow-sm)}
+.contact-link:hover{border-color:var(--accent);transform:translateX(6px);box-shadow:var(--shadow-md)}
+.contact-link-icon{width:42px;height:42px;background:var(--accent-soft);border:none;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition)}
+.contact-link:hover .contact-link-icon{background:var(--accent)}
+.contact-link-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2;transition:var(--transition)}
+.contact-link:hover .contact-link-icon svg{stroke:#fff}
+.contact-link-text{font-size:0.82rem;color:var(--text-muted)}
+.contact-link-label{font-size:0.92rem;font-weight:600;color:var(--text);display:block}
+.contact-codes{margin-top:0}
+.contact-codes h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;margin-bottom:1rem;color:var(--text)}
+.codes-list{display:flex;flex-wrap:wrap;gap:0.5rem}
+.code-tag{font-size:0.78rem;padding:0.45rem 0.85rem;background:var(--bg-card);border:1px solid var(--border-light);border-radius:4px;color:var(--text-light);transition:var(--transition);font-weight:500;box-shadow:var(--shadow-sm)}
+.code-tag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* Footer */
+.footer{text-align:center;padding:2.5rem;border-top:1px solid var(--border-light);font-size:0.8rem;color:var(--text-muted);background:var(--bg);letter-spacing:0.3px}
+
+/* Back to Top */
+.back-top{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;background:var(--accent);color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:999;opacity:0;transform:translateY(20px);transition:var(--transition);box-shadow:0 4px 16px rgba(108,92,231,0.3)}
+.back-top.visible{opacity:1;transform:translateY(0)}
+.back-top:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(108,92,231,0.4);background:var(--accent-light)}
+.back-top svg{width:18px;height:18px}
+
+/* Animations */
+.reveal{opacity:0;transform:translateY(25px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-stagger .reveal:nth-child(1){transition-delay:0s}
+.reveal-stagger .reveal:nth-child(2){transition-delay:0.12s}
+.reveal-stagger .reveal:nth-child(3){transition-delay:0.24s}
+.reveal-stagger .reveal:nth-child(4){transition-delay:0.36s}
+
+/* Mobile */
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(248,249,252,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem 2rem;gap:1.25rem;border-bottom:1px solid var(--border-light);box-shadow:0 8px 24px rgba(108,92,231,0.06)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+  .about-grid,.contact-content{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .hero{padding:5rem 1.5rem 3rem}
+  section{padding:4rem 1.5rem}
+  .testimonials-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .hero-btns{flex-direction:column;align-items:center}
+  .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Hasan <span>Ali</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#services" onclick="closeNav()">Services</a></li>
+    <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+    <li><a href="#samples" onclick="closeNav()">Samples</a></li>
+    <li><a href="#testimonials" onclick="closeNav()">Reviews</a></li>
+    <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-label">Structural Engineering</div>
+    <h1>Hasan <span>Ali</span></h1>
+    <p class="hero-title">Structural Engineer &nbsp;&middot;&nbsp; Analysis &amp; Design &nbsp;&middot;&nbsp; US Permit Drawings</p>
+    <p class="hero-tagline">Delivering safe, code-compliant structural solutions for residential and commercial projects across the United States.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact Me
+      </a>
+      <a href="#projects" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        View Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">About</div>
+      <div class="section-title">Background</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a structural engineer with a <strong>BS in Civil Engineering</strong>, specializing in structural analysis and design for US-based residential and commercial construction.</p>
+        <p>At <strong>Safe Engineering Solutions</strong>, I work on structural analysis, design, and permit-ready drawing packages for projects across <strong>California, Texas, Florida, Maryland, Washington, Hawaii, New York, Colorado</strong>, and other states — ensuring full compliance with local and national building codes.</p>
+        <p>Alongside my firm work, I take on <strong>freelance structural engineering projects</strong> — helping homeowners, contractors, and architects across the US with structural calculations, permit drawings, and design consultations.</p>
+        <div class="tools-list">
+          <span class="tool-tag">ETABS</span>
+          <span class="tool-tag">Tekla Structures</span>
+          <span class="tool-tag">ForteWEB</span>
+          <span class="tool-tag">AutoCAD</span>
+          <span class="tool-tag">RAM Elements</span>
+          <span class="tool-tag">SAFE</span>
+          <span class="tool-tag">Revit</span>
+        </div>
+      </div>
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <span class="stat-num" data-target="8" data-suffix="+">0</span>
+          <span class="stat-label">US States Covered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="45" data-suffix="+">0</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="8" data-suffix="+">0</span>
+          <span class="stat-label">Building Codes</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="5.0" data-decimals="1">0</span>
+          <span class="stat-label">Client Rating</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Services</div>
+      <div class="section-title">What I Do</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="services-grid reveal-stagger">
+      <div class="service-card reveal">
+        <div class="service-icon">&#9670;</div>
+        <h3>Structural Analysis &amp; Design</h3>
+        <p>Complete structural design for timber, masonry, steel, and concrete systems — gravity, lateral, and connection design per governing codes.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">&#9651;</div>
+        <h3>Wind &amp; Seismic Design</h3>
+        <p>Lateral force-resisting system design for high-wind and seismic zones, including shear wall, diaphragm, and hold-down analysis per ASCE 7.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">&#9632;</div>
+        <h3>Foundation Design</h3>
+        <p>Shallow and deep foundation design — spread footings, grade beams, mat slabs, and pier foundations sized for site-specific soil and load conditions.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">&#9881;</div>
+        <h3>Permit-Ready Drawings</h3>
+        <p>Detailed structural plans, sections, and details with calculation packages prepared to meet local jurisdiction requirements for permit approval.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Portfolio</div>
+      <div class="section-title">Project Experience</div>
+      <p class="section-subtitle">Structural engineering projects delivered across multiple US states.</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="filter-bar" id="filterBar"></div>
+    <div class="project-count" id="projectCount"></div>
+    <div class="projects-grid" id="projectsGrid"></div>
+    <div class="load-more-wrap"><button class="load-more-btn" id="loadMoreBtn" onclick="loadMore()">Show More Projects</button></div>
+  </div>
+</section>
+
+<!-- Work Samples -->
+<section id="samples">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Downloads</div>
+      <div class="section-title">Work Samples</div>
+      <p class="section-subtitle">Sample structural drawings and calculation reports.</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="samples-grid">
+      <a href="samples/266-Morro-Ave-Structural-Drawings.pdf" target="_blank" class="sample-card reveal">
+        <div class="sample-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="sample-info">
+          <h3>266 Morro Ave — Structural Drawings</h3>
+          <p>Permit-ready structural drawing set for a residential project in California — framing plans, sections, and structural details.</p>
+        </div>
+        <div class="sample-meta">
+          <span class="sample-type">Drawings</span>
+          <span class="sample-size">11 pages &middot; 1.0 MB</span>
+          <span class="sample-dl">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            PDF
+          </span>
+        </div>
+      </a>
+      <a href="samples/266-Morro-Ave-Structural-Report.pdf" target="_blank" class="sample-card reveal">
+        <div class="sample-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="sample-info">
+          <h3>266 Morro Ave — Structural Report</h3>
+          <p>Complete structural calculation report — load analysis, member design, lateral system, connections, and code compliance per CBC.</p>
+        </div>
+        <div class="sample-meta">
+          <span class="sample-type">Calculations</span>
+          <span class="sample-size">44 pages &middot; 4.2 MB</span>
+          <span class="sample-dl">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            PDF
+          </span>
+        </div>
+      </a>
+      <a href="samples/Pelican-House-Structural-Report.pdf" target="_blank" class="sample-card reveal">
+        <div class="sample-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="sample-info">
+          <h3>Pelican House — Structural Report</h3>
+          <p>Structural engineering report for the Pelican House project in Exuma, Bahamas — analysis, design, and compliance documentation.</p>
+        </div>
+        <div class="sample-meta">
+          <span class="sample-type">Calculations</span>
+          <span class="sample-size">30 pages &middot; 2.9 MB</span>
+          <span class="sample-dl">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            PDF
+          </span>
+        </div>
+      </a>
+      <a href="samples/Pelican-House-Structural-Plans.pdf" target="_blank" class="sample-card reveal">
+        <div class="sample-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="sample-info">
+          <h3>Pelican House — Structural Plans</h3>
+          <p>Full structural drawing set for the Pelican House — foundation plans, framing layouts, sections, and connection details.</p>
+        </div>
+        <div class="sample-meta">
+          <span class="sample-type">Drawings</span>
+          <span class="sample-size">69 pages &middot; 6.7 MB</span>
+          <span class="sample-dl">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            PDF
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Testimonials</div>
+      <div class="section-title">Client Reviews</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</div>
+        <p class="testimonial-text">"Hasan knows his stuff. He was incredibly helpful and knowledgeable for my home reno project. He communicates extremely well and was able to answer all of my detailed questions. Highly recommend."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <span class="testimonial-name">air1985</span>
+            <div class="testimonial-meta">United States &middot; Residential Renovation</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</div>
+        <p class="testimonial-text">"Great experience and good job."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <span class="testimonial-name">sliverichie <span class="testimonial-badge">Repeat Client</span></span>
+            <div class="testimonial-meta">United States &middot; Structural Engineering</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Get in Touch</div>
+      <div class="section-title">Let's Work Together</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info reveal">
+        <p>Looking for a structural engineer for your next project? I'm available for freelance and contract work — residential, commercial, and mixed-use projects across the US.</p>
+        <a href="mailto:hasan.engnr1@gmail.com" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-text">hasan.engnr1@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://wa.me/923008972380" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div>
+            <span class="contact-link-label">WhatsApp</span>
+            <span class="contact-link-text">+92 300 897 2380</span>
+          </div>
+        </a>
+        <a href="https://www.upwork.com/freelancers/~0110e6759ac718bc7d" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <span class="contact-link-label">Upwork</span>
+            <span class="contact-link-text">View my Upwork profile</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/hasan-ali-218553378/" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-text">Connect on LinkedIn</span>
+          </div>
+        </a>
+      </div>
+      <div class="contact-codes reveal">
+        <h3>Codes &amp; Standards</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1rem;font-weight:300">Design work compliant with major US building codes and standards.</p>
+        <div class="codes-list">
+          <span class="code-tag">ASCE 7</span>
+          <span class="code-tag">IBC</span>
+          <span class="code-tag">IRC</span>
+          <span class="code-tag">CBC</span>
+          <span class="code-tag">FBC</span>
+          <span class="code-tag">NDS</span>
+          <span class="code-tag">SDPWS</span>
+          <span class="code-tag">TMS 402</span>
+          <span class="code-tag">ACI 318</span>
+          <span class="code-tag">AISC 360</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  &copy; 2026 Hasan Ali. All rights reserved.
+</footer>
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+const projects = [
+  {
+    title: "Residential Structural Design",
+    location: "El Cajon, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis and design for a residential property at 1037 Prince Street, including gravity framing, lateral system, and permit drawings.",
+    tags: ["Wood Frame", "CBC", "Permit Drawings"]
+  },
+  {
+    title: "Structural Calculations Package",
+    location: "Westminster, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Complete structural calculation package for a residential property at 14361 Warren Street, including gravity and lateral load analysis per CBC.",
+    tags: ["Wood Frame", "CBC", "Structural Calcs"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Irvine, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential property at 14611 Deer Park Street, including roof and floor framing, lateral system, and foundation design.",
+    tags: ["Wood Frame", "CBC", "Structural Calcs"]
+  },
+  {
+    title: "Residential Permit Package",
+    location: "Accokeek, MD",
+    type: "residential",
+    state: "MD",
+    scope: "Structural analysis, design, and permit-ready drawing package for a residential project at 14805 Livingston Road, compliant with IBC requirements.",
+    tags: ["Wood Frame", "IBC", "Permit Drawings"]
+  },
+  {
+    title: "Residential Structural Model",
+    location: "Makanui, HI",
+    type: "residential",
+    state: "HI",
+    scope: "Tekla structural model and analysis for a residential project at 3555 Makanui Place, including 3D framing and structural export for coordination.",
+    tags: ["Tekla", "IBC", "3D Modeling"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "La Mesa, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Complete structural design for a residential property at 4302 Palm Avenue, including gravity and lateral system design per CBC.",
+    tags: ["Wood Frame", "CBC", "Lateral Design"]
+  },
+  {
+    title: "Single-Family Structural Design",
+    location: "San Diego, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a single-family residence at 5651 Dorothy Way, including gravity system, lateral bracing, and foundation design.",
+    tags: ["Wood Frame", "CBC", "Foundation"]
+  },
+  {
+    title: "Residential Structural Analysis",
+    location: "Capitol Heights, MD",
+    type: "residential",
+    state: "MD",
+    scope: "Structural analysis and permit package for a residential property at 617 Balboa Avenue, including load path verification and connection design.",
+    tags: ["Wood Frame", "IBC", "Structural Calcs"]
+  },
+  {
+    title: "Residential Deck Design",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential deck, including post, beam, and joist sizing, connection details, ledger attachment, and foundation design.",
+    tags: ["Wood Frame", "CBC", "Deck"]
+  },
+  {
+    title: "Deck Extension & Interior Renovation",
+    location: "Sacramento, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a deck extension and interior renovation at 6408 L Street, including header sizing, load redistribution, and new framing.",
+    tags: ["Wood Frame", "CBC", "Remodel"]
+  },
+  {
+    title: "Residential Structural Analysis",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis for a residential property at 13551 Sioux Road, including member verification, load path review, and compliance report.",
+    tags: ["Wood Frame", "CBC", "Structural Calcs"]
+  },
+  {
+    title: "Shed Plans Modification",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural modification of DIY shed plans to meet local building code requirements, including framing adjustments and foundation design.",
+    tags: ["Wood Frame", "CBC", "Permit Drawings"]
+  },
+  {
+    title: "Pelican House — Residential Design",
+    location: "Exuma, Bahamas",
+    type: "residential",
+    state: "INT",
+    scope: "Structural design for the Pelican House in Exuma, Bahamas — complete structural analysis, design, and full drawing set for an international residential project.",
+    tags: ["Wood Frame", "International", "Full Package"]
+  },
+  {
+    title: "Residential Permit Drawings",
+    location: "Bowie, MD",
+    type: "residential",
+    state: "MD",
+    scope: "Structural analysis and permit-ready drawings for a residential project at 11504 Laurel, including framing plans, details, and calculation report.",
+    tags: ["Wood Frame", "IBC", "Permit Drawings"]
+  },
+  {
+    title: "EV Charger Permit Design",
+    location: "Carmel Creek, CA",
+    type: "commercial",
+    state: "CA",
+    scope: "Structural and electrical permit design for an EV charger installation at Carmel Creek, including equipment anchorage, pad foundation, and code compliance.",
+    tags: ["Concrete", "CBC", "Commercial"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Sacramento, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential property at 3704 North Edge Drive, including gravity framing, shear walls, and hold-down design per CBC.",
+    tags: ["Wood Frame", "CBC", "Lateral Design"]
+  },
+  {
+    title: "Structural Report",
+    location: "El Cajon, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural engineering report for a residential property at 2352 Eleta Avenue, including existing condition assessment and design recommendations.",
+    tags: ["Wood Frame", "CBC", "Report"]
+  },
+  {
+    title: "Foundation Design & Analysis",
+    location: "Monterey Park, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Foundation design for a residential property at 924 Mooney Drive, including footing sizing, soil bearing analysis, and reinforcement detailing.",
+    tags: ["Foundation", "CBC", "Concrete"]
+  },
+  {
+    title: "Structural Calculations",
+    location: "Mission Viejo, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural calculation package for a residential property at 25351 Classic Drive, including beam sizing, load path analysis, and connection design.",
+    tags: ["Wood Frame", "CBC", "Structural Calcs"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Texas",
+    type: "residential",
+    state: "TX",
+    scope: "Structural design for a residential property at 2283 W. Windhaven Drive, including wind load design, gravity framing, and code-compliant connections.",
+    tags: ["Wood Frame", "IBC", "Wind Design"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Port Townsend, WA",
+    type: "residential",
+    state: "WA",
+    scope: "Structural design for a residence at 1375 20th Street, including seismic and wind lateral system design per IBC and ASCE 7.",
+    tags: ["Wood Frame", "IBC", "Seismic"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Hesperia, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential property at 16292 Lime Street, including gravity framing, lateral bracing, and foundation design per CBC.",
+    tags: ["Wood Frame", "CBC", "Foundation"]
+  },
+  {
+    title: "Structural Analysis & Report",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis and engineering report for a residential property at 9665 Lutheran Way, including member verification and code compliance review.",
+    tags: ["Wood Frame", "CBC", "Report"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Garden Grove, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential property at 11248 Wesley Avenue, including roof and floor framing, lateral system, and permit documentation.",
+    tags: ["Wood Frame", "CBC", "Permit Drawings"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "San Diego, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential property at 4963 Brillo Street, including gravity and lateral system design with seismic detailing per CBC.",
+    tags: ["Wood Frame", "CBC", "Seismic"]
+  },
+  {
+    title: "Garage Structural Design",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential garage project, including framing, foundation, lateral bracing, and connection details per CBC requirements.",
+    tags: ["Wood Frame", "CBC", "Foundation"]
+  },
+  {
+    title: "Commercial Shop Design",
+    location: "California",
+    type: "commercial",
+    state: "CA",
+    scope: "Structural design for a commercial shop building, including steel framing, lateral force-resisting system, foundation design, and permit drawings.",
+    tags: ["Steel", "CBC", "Commercial"]
+  },
+  {
+    title: "Mountain Residence Design",
+    location: "Big Bear City, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a property at 1648 E. Big Bear Blvd, addressing snow loads, seismic forces, and site-specific conditions per CBC.",
+    tags: ["Wood Frame", "Snow Load", "CBC"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Garden Grove, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a residential property at 14834 Abair Street, including complete gravity and lateral analysis with permit-ready plans.",
+    tags: ["Wood Frame", "CBC", "Permit Drawings"]
+  },
+  {
+    title: "Plans Reproduction & Drafting",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural plans reproduction and drafting for a residential property at 266 Morro Avenue, including updated structural details and code references.",
+    tags: ["AutoCAD", "CBC", "Drafting"]
+  },
+  {
+    title: "Structural Design & Title 24",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design and Title 24 energy compliance for a residential property at 721 S. Bristol Avenue, including site plan and structural calcs.",
+    tags: ["Wood Frame", "Title 24", "CBC"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis and design for a residential property on King Street, including gravity framing, lateral system design, and permit documentation.",
+    tags: ["Wood Frame", "CBC", "Structural Calcs"]
+  },
+  {
+    title: "House Extension Design",
+    location: "Chevy Chase, MD",
+    type: "residential",
+    state: "MD",
+    scope: "Structural design for a house extension including new framing, header design, connection to existing structure, and updated lateral analysis.",
+    tags: ["Wood Frame", "IBC", "Addition"]
+  },
+  {
+    title: "Structural Report & MEP Coordination",
+    location: "Los Angeles, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural report and MEP coordination for a residential property at 3327 Sanborn Avenue, including framing analysis and systems integration.",
+    tags: ["Wood Frame", "CBC", "MEP"]
+  },
+  {
+    title: "Konan Residence — Structural Analysis",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis report for the Konan Residence, including existing condition evaluation, load analysis, and design recommendations.",
+    tags: ["Wood Frame", "CBC", "Report"]
+  },
+  {
+    title: "Residential Structural Design & MEP",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design and MEP coordination for Kenny's Residence, including framing analysis, lateral design, and mechanical/electrical/plumbing integration.",
+    tags: ["Wood Frame", "CBC", "MEP"]
+  },
+  {
+    title: "Structural Calculations",
+    location: "Los Angeles, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural calculation package for a residential property at 2706 Robertson Street, including beam sizing, load analysis, and connection detailing.",
+    tags: ["Wood Frame", "CBC", "Structural Calcs"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "El Cajon, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis and design for a residential property at 815 N. Mollison Avenue, including gravity and lateral system design per CBC.",
+    tags: ["Wood Frame", "CBC", "Lateral Design"]
+  },
+  {
+    title: "Door-to-Archway Conversion",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis for a door-to-archway conversion, including header adequacy verification, load redistribution analysis, and reinforcement design.",
+    tags: ["Wood Frame", "CBC", "Remodel"]
+  },
+  {
+    title: "Haddadi Residence — Structural Modifications",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural modifications for the Haddadi Residence, including revised framing, updated lateral analysis, and new connection details.",
+    tags: ["Wood Frame", "CBC", "Remodel"]
+  },
+  {
+    title: "Rhodes Residence — Structural Modifications",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural modification design for the Rhodes Residence, including load path revisions, new header design, and updated shear wall analysis.",
+    tags: ["Wood Frame", "CBC", "Remodel"]
+  },
+  {
+    title: "Structural Calcs & Permit Plans",
+    location: "San Bernardino County, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural calculations and permit plans for a residential property on Learco Way, including gravity design, lateral bracing, and foundation details.",
+    tags: ["Wood Frame", "CBC", "Permit Drawings"]
+  },
+  {
+    title: "Porch Addition — Permit Plans & Calcs",
+    location: "California",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a porch addition at 1531 E. 49th Street, including framing, foundation, lateral connections, and complete permit package.",
+    tags: ["Wood Frame", "CBC", "Addition"]
+  },
+  {
+    title: "Structural Modifications",
+    location: "Fountain Valley, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis for modifications at 18446 Brookhurst Street, including header adequacy checks, load redistribution, and updated lateral design.",
+    tags: ["Wood Frame", "CBC", "Remodel"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "San Diego, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis and design for a residential property at 790 Ridgehaven Drive, including gravity framing, shear wall layout, and foundation design.",
+    tags: ["Wood Frame", "CBC", "Lateral Design"]
+  },
+  {
+    title: "Home Addition Design",
+    location: "Garden Grove, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural design for a home addition on Roberta Street, including new roof framing, shear wall design, and foundation expansion per CBC.",
+    tags: ["Wood Frame", "CBC", "Addition"]
+  },
+  {
+    title: "Residential Structural Design",
+    location: "Buena Park, CA",
+    type: "residential",
+    state: "CA",
+    scope: "Structural analysis and design for a residential property in the La Mirada / Buena Park area, including framing, lateral system, and permit package.",
+    tags: ["Wood Frame", "CBC", "Permit Drawings"]
+  },
+  {
+    title: "Commercial Structural Calcs & Title 24",
+    location: "Fresno, CA",
+    type: "commercial",
+    state: "CA",
+    scope: "Structural calculations and Title 24 energy compliance package for a commercial billiard facility, including open-span framing and lateral design.",
+    tags: ["Steel", "CBC", "Title 24"]
+  }
+];
+
+const PROJECTS_PER_PAGE = 9;
+let visibleCount = PROJECTS_PER_PAGE;
+let currentFilter = "all";
+
+function getFilters() {
+  const types = [...new Set(projects.map(p => p.type))];
+  const stateOrder = ["CA","MD","TX","WA","HI"];
+  const states = stateOrder.filter(s => projects.some(p => p.state === s));
+  return [
+    { label: "All", value: "all" },
+    ...types.map(t => ({ label: t.charAt(0).toUpperCase() + t.slice(1), value: `type:${t}` })),
+    ...states.map(s => ({ label: s, value: `state:${s}` }))
+  ];
+}
+
+const filterBar = document.getElementById("filterBar");
+getFilters().forEach((f, i) => {
+  const btn = document.createElement("button");
+  btn.className = "filter-btn" + (i === 0 ? " active" : "");
+  btn.textContent = f.label;
+  btn.dataset.filter = f.value;
+  btn.addEventListener("click", () => {
+    currentFilter = f.value;
+    visibleCount = PROJECTS_PER_PAGE;
+    filterProjects(f.value, btn);
+  });
+  filterBar.appendChild(btn);
+});
+
+const grid = document.getElementById("projectsGrid");
+const countEl = document.getElementById("projectCount");
+const loadBtn = document.getElementById("loadMoreBtn");
+
+function getFilteredProjects() {
+  if (currentFilter === "all") return projects;
+  if (currentFilter.startsWith("type:")) return projects.filter(p => p.type === currentFilter.split(":")[1]);
+  if (currentFilter.startsWith("state:")) return projects.filter(p => p.state === currentFilter.split(":")[1]);
+  return projects;
+}
+
+function renderProjects() {
+  const filtered = getFilteredProjects();
+  const showing = filtered.slice(0, visibleCount);
+  grid.innerHTML = "";
+  showing.forEach((p, i) => {
+    const card = document.createElement("div");
+    card.className = "project-card";
+    card.style.opacity = "0";
+    card.style.transform = "translateY(20px)";
+    card.dataset.type = p.type;
+    card.dataset.state = p.state;
+    card.innerHTML = `
+      <div class="project-accent${p.type === 'commercial' ? ' commercial' : ''}"></div>
+      <div class="project-body">
+        <h3>${p.title}</h3>
+        <div class="project-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${p.location}
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+            ${p.type.charAt(0).toUpperCase() + p.type.slice(1)}
+          </span>
+        </div>
+        <p class="project-scope">${p.scope}</p>
+        <div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join("")}</div>
+      </div>`;
+    grid.appendChild(card);
+    setTimeout(() => {
+      card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    }, 50 + i * 40);
+  });
+  countEl.innerHTML = `Showing <strong>${showing.length}</strong> of <strong>${filtered.length}</strong> projects`;
+  loadBtn.classList.toggle("hidden", visibleCount >= filtered.length);
+}
+
+function filterProjects(value, activeBtn) {
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  activeBtn.classList.add("active");
+  renderProjects();
+}
+
+function loadMore() {
+  visibleCount += PROJECTS_PER_PAGE;
+  renderProjects();
+}
+
+renderProjects();
+
+function animateCounters() {
+  document.querySelectorAll("[data-target]").forEach(el => {
+    if (el.dataset.animated) return;
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || 0);
+    const suffix = el.dataset.suffix || "";
+    const duration = 1500;
+    const start = performance.now();
+    el.dataset.animated = "true";
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = (target * eased).toFixed(decimals);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add("visible");
+      if (e.target.closest(".stats-grid")) animateCounters();
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+const nav = document.getElementById("nav");
+const scrollBar = document.getElementById("scrollProgress");
+const backTop = document.getElementById("backTop");
+window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+  scrollBar.style.width = (scrolled / height * 100) + "%";
+  nav.classList.toggle("scrolled", scrolled > 50);
+  backTop.classList.toggle("visible", scrolled > 600);
+});
+
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+navToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  navToggle.classList.toggle("open");
+});
+function closeNav() {
+  navLinks.classList.remove("open");
+  navToggle.classList.remove("open");
+}
+</script>
+</body>
+</html>
